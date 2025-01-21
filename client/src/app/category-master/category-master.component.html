@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="header">
+        <h2>Category List</h2>
+        <button class="add-btn" (click)="openAddOrEditCategoryModal()">Add Category</button>
+    </div>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Category ID</th>
+                <th>Category Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let category of categories">
+                <td>{{ category.id }}</td>
+                <td>{{ category.name }}</td>
+                <td>
+                    <div class="action-btns">
+                        <button class="edit-btn" (click)="openAddOrEditCategoryModal(category)">Edit</button>
+                        <button class="delete-btn" (click)="openDeleteCategoryModal(category.id)">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
